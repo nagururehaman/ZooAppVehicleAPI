@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HarpSeal.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Zoo04Group</a> &gt; <a href="index.source.html" class="el_package">edu.nwmissouri.zoo04group</a> &gt; <span class="el_source">HarpSeal.java</span></div><h1>HarpSeal.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package edu.nwmissouri.zoo04group;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/**
+ * HarpSeal class (derived subclass of the superclass Animal)
+ * @author Rehana Naguru
+ */
+public class HarpSeal extends Animal{
+    /*
+    HarpSeal Constructor 
+    @param name -the name of this HarpSeal
+    */
+    public HarpSeal(String name){
+<span class="fc" id="L22">        super(name);</span>
+<span class="fc" id="L23">    }</span>
+    
+    @Override
+    public void speak(){
+<span class="fc" id="L27">        System.out.println(&quot;I am HarpSeal and I communicate vocally by making noise with my throat and air.&quot;);</span>
+<span class="fc" id="L28">    }</span>
+    @Override
+    public void move(){
+<span class="fc" id="L31">        System.out.println(&quot;I swim in sea iceand I move on ice by pulling my front flippers, which have strong claws.&quot;);</span>
+<span class="fc" id="L32">    } </span>
+    public void funfacts(){
+<span class="fc" id="L34">        System.out.println(&quot;I am HarpSeal, I am more migratory and I can travel more than 3100 miles.&quot;);</span>
+<span class="fc" id="L35">    }</span>
+    // location method
+    public void location(){
+<span class="fc" id="L38">        System.out.println(&quot;I am native to northern part of Arctic Ocean and Atlantic Ocean.&quot;);</span>
+<span class="fc" id="L39">    } </span>
+    
+    public void food(){
+<span class="fc" id="L42">        System.out.println(&quot;I eat many types of fish and invertibrates.&quot;);</span>
+<span class="fc" id="L43">    }  </span>
+    // calculate method to calculate the addition of two numbers
+    public void calculate() {
+<span class="fc" id="L46">        double p = 5.0;</span>
+<span class="fc" id="L47">        int q = 4;</span>
+<span class="fc" id="L48">        double r = getHarpSealAdd(p, q);</span>
+<span class="fc" id="L49">        System.out.printf(&quot;I know Addition ! %4.2f addition %d is %4.2f \n&quot;, p, q, r);</span>
+<span class="fc" id="L50">    }</span>
+     public double getHarpSealAdd(double a, int b) { 
+        
+<span class="fc" id="L53">         return a+b;</span>
+    }
+    
+    
+     public static void main(String[] args) {
+<span class="fc" id="L58">        var a = new HarpSeal(&quot;Rehana&quot;);</span>
+<span class="fc" id="L59">        a.speak();</span>
+<span class="fc" id="L60">        a.move();</span>
+<span class="fc" id="L61">        a.funfacts();</span>
+<span class="fc" id="L62">        a.location();</span>
+<span class="fc" id="L63">        a.food();</span>
+<span class="fc" id="L64">        a.calculate();</span>
+        
+<span class="fc" id="L66">        }</span>
+        
+} 
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

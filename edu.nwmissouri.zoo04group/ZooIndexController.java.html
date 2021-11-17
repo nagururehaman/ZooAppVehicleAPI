@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ZooIndexController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Zoo04Group</a> &gt; <a href="index.source.html" class="el_package">edu.nwmissouri.zoo04group</a> &gt; <span class="el_source">ZooIndexController.java</span></div><h1>ZooIndexController.java</h1><pre class="source lang-java linenums">
+package edu.nwmissouri.zoo04group;
+
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.util.Map;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+/**
+ * Controller that handles the default request (&quot;/&quot;).
+ *
+ * Use the new Java 15 text blocks to provide our menu. Thymeleaf:
+ * https://spring.io/guides/gs/serving-web-content/
+ *
+ *
+ * @author Rehana Naguru
+ */
+@Controller
+<span class="nc" id="L23">public class ZooIndexController {</span>
+
+    private static final String GREETING_MESSAGE = &quot;Welcome to our Zoo App vehicle Group4!&quot;;
+    private static final String GOODBYE_MESSAGE = &quot;Thank you for visiting our zoo!&quot;;
+    private static final int NUMBER_ANIMAL_TYPES = 6;
+
+    /**
+     * The @GetMapping annotation ensures that HTTP GET requests to / are mapped
+     * to the index() method.Example:
+     * https://spring.io/guides/gs/serving-web-content/
+     *
+     *
+     * @param idParam - the id provided in the URL
+     * @param model - the model that holds information from controller to view
+     * @return
+     */
+    @GetMapping(path = &quot;/&quot;)
+    public String index(
+            @RequestParam(name = &quot;id&quot;, required = false, defaultValue = &quot;0&quot;) String idParam,
+            Model model) {
+<span class="nc" id="L43">        model.addAttribute(&quot;id&quot;, idParam);</span>
+<span class="nc" id="L44">        model.addAttribute(&quot;name&quot;, &quot;World&quot;);</span>
+<span class="nc" id="L45">        model.addAttribute(&quot;greeting&quot;, GREETING_MESSAGE); </span>
+        //model.addAttribute(&quot;vehicleMap&quot;, ZooBuildSwitch.getAllVehicleMap());
+      //  model.addAttribute(&quot;animalMap&quot;, ZooBuildSwitch.getAllAnimalMap());
+        //model.addAttribute(&quot;customVehicleGroup&quot;, getCustomVehicleGroup(idParam));
+      //  model.addAttribute(&quot;customAnimalGroup&quot;, getCustomAnimalGroup(idParam));
+        // associated with index.hmtl in src/main/resources/templates
+<span class="nc" id="L51">        return &quot;index&quot;;</span>
+    }
+
+    /**
+     * Map GET request to &quot;/about&quot; to about().
+     *
+     * @return filename from src/main/resources/templates folder
+     */
+    @GetMapping(path = &quot;/about&quot;)
+    public String about() {
+<span class="nc" id="L61">        return &quot;about&quot;;</span>
+    }
+
+    private String getCustomVehicleGroup(String id) {
+        // Create a stream to hold the output
+<span class="nc" id="L66">        var newStream = new ByteArrayOutputStream();</span>
+<span class="nc" id="L67">        var newPrintStream = new PrintStream(newStream);</span>
+        // IMPORTANT: Save the old System.out!
+<span class="nc" id="L69">        PrintStream old = System.out;</span>
+        // Tell Java to use your special stream
+<span class="nc" id="L71">        System.setOut(newPrintStream);</span>
+        
+<span class="nc" id="L73">        var intID = Integer.parseInt(id);</span>
+
+<span class="nc bnc" id="L75" title="All 7 branches missed.">        switch (intID) {</span>
+
+            case 1: {
+<span class="nc" id="L78">                BikeGroup.create();</span>
+<span class="nc" id="L79">                BikeGroup.run();</span>
+            }
+            case 2 :{
+<span class="nc" id="L82">                 BusGroup.create();</span>
+<span class="nc" id="L83">                 BusGroup.run();</span>
+            }
+            case 3 :{
+<span class="nc" id="L86">                 CoalTrainGroup.create();</span>
+<span class="nc" id="L87">                 CoalTrainGroup.run();</span>
+            }
+            case 4 : {
+<span class="nc" id="L90">                ElectricCarGroup.create();</span>
+<span class="nc" id="L91">                ElectricCarGroup.run();</span>
+            }
+            case 5 : {
+<span class="nc" id="L94">                ScooterGroup.create();</span>
+<span class="nc" id="L95">               ScooterGroup.run();</span>
+            }
+            case 6 :{
+<span class="nc" id="L98">                 WheelChairGroup.create();</span>
+<span class="nc" id="L99">                 WheelChairGroup.run();</span>
+            }
+            default : {
+            }
+        }
+
+        // Put things back
+<span class="nc" id="L106">        System.out.flush();</span>
+<span class="nc" id="L107">        System.setOut(old);</span>
+<span class="nc" id="L108">        String stringOutput = newStream.toString();</span>
+<span class="nc" id="L109">        return stringOutput;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

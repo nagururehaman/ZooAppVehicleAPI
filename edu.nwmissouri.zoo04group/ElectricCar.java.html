@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ElectricCar.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Zoo04Group</a> &gt; <a href="index.source.html" class="el_package">edu.nwmissouri.zoo04group</a> &gt; <span class="el_source">ElectricCar.java</span></div><h1>ElectricCar.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package edu.nwmissouri.zoo04group;
+
+/**
+ * Electric Car Class (derived subclass of the superclass Vehicle)
+ * @author Rehana Naguru
+ */
+public class ElectricCar extends Vehicle {
+
+     /*
+    ElectricCar Constructor 
+    @param name -the name of this ElectricCar
+    */
+     public ElectricCar(String name){
+<span class="fc" id="L18">       super(name);</span>
+<span class="fc" id="L19">    }</span>
+    
+    @Override
+    public void location(){
+<span class="fc" id="L23">        System.out.println(&quot;The path to travel is connected to GPS.&quot;);</span>
+<span class="fc" id="L24">    } </span>
+    @Override
+    public void type(){
+<span class="fc" id="L27">        System.out.println(&quot;This is of land vehicle used to see Terrestrial Animals.&quot;);</span>
+<span class="fc" id="L28">    } </span>
+ 
+    public void model(){
+<span class="fc" id="L31">        System.out.println(&quot;Model of your chosen car is :Toyoto.&quot;);</span>
+<span class="fc" id="L32">    }</span>
+    // make method
+    public void make(){
+<span class="fc" id="L35">        System.out.println(&quot;Make of car is Camry.&quot;);</span>
+<span class="fc" id="L36">    }  </span>
+    // color method
+    public void color(){
+<span class="fc" id="L39">        System.out.println(&quot;The color of car you chosen is Red.&quot;);</span>
+<span class="fc" id="L40">    } </span>
+    // price method to calculate the rent price.
+    public void price() {
+<span class="fc" id="L43">        double distance = 8.0;</span>
+<span class="fc" id="L44">        double gasprice = 4;</span>
+<span class="fc" id="L45">        double price = getVehiclePrice(distance, gasprice);</span>
+<span class="fc" id="L46">        System.out.printf(&quot;Price to rent for ! %4.2f miles distance %4.2f$ gasprice is %4.2f $ \n&quot;, distance, gasprice,price );</span>
+<span class="fc" id="L47">    }</span>
+     public double getVehiclePrice(double a, double b) { 
+        
+<span class="fc" id="L50">         return a*b;</span>
+    }
+    
+    
+     public static void main(String[] args) {
+<span class="fc" id="L55">        var car = new ElectricCar(&quot;Rehana&quot;);</span>
+<span class="fc" id="L56">        car.model();</span>
+<span class="fc" id="L57">        car.make();</span>
+<span class="fc" id="L58">        car.color();</span>
+<span class="fc" id="L59">        car.location();</span>
+<span class="fc" id="L60">        car.type();</span>
+<span class="fc" id="L61">        car.price();</span>
+        
+<span class="fc" id="L63">        }</span>
+        
+} 
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

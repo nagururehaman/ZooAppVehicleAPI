@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Animal.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Zoo04Group</a> &gt; <a href="index.source.html" class="el_package">edu.nwmissouri.zoo04group</a> &gt; <span class="el_source">Animal.java</span></div><h1>Animal.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package edu.nwmissouri.zoo04group;
+
+/**
+ *  Animal super class for traits shared by all animals. Abstract class 
+ * general animal - only specific types.
+ * @author Rehana Naguru
+ */
+public abstract class Animal { 
+    /**
+     * Animal Gender may be not known. 
+     */
+<span class="fc" id="L16">      protected String name = &quot;no name&quot;;</span>
+     /**
+     * Animal gender is not known . 
+     * Using enumerated
+     */
+    protected AnimalGender gender;
+    /**
+     * Animal constructor
+     *@param name - the name of this instance of an animal
+     */
+<span class="fc" id="L26">    public Animal(String name) {</span>
+<span class="fc" id="L27">        this.name = name;</span>
+<span class="fc" id="L28">        this.gender = AnimalGender.UNKNOWN;</span>
+
+<span class="fc" id="L30">    }</span>
+    /**
+     * speak() - general method of speak
+     */
+    public void speak() {
+<span class="nc" id="L35">        System.out.println(&quot;Generic animal sound&quot;);</span>
+<span class="nc" id="L36">    }</span>
+    /**
+     * move() - general method for animal movement
+     */
+    public void move() {
+<span class="nc" id="L41">        System.out.println(&quot;Generic animal movement&quot;);</span>
+<span class="nc" id="L42">    }</span>
+
+    /**
+     * Get animal's name.
+     * @return name
+     */
+    public String getName() {
+<span class="nc" id="L49">        return name;</span>
+    }
+
+    /**
+     * Get the animal gender.
+     *
+     * @see edu.nwmissouri.zoo04lab.AnimalGender
+     * @return the gender
+     */
+    public AnimalGender getGender() {
+<span class="nc" id="L59">        return gender;</span>
+    }
+    /**
+     * Set the animal gender using an enumerated
+     *
+     * @param gender the gender to set
+     */
+    public void setGender(AnimalGender gender) {
+<span class="nc" id="L67">        this.gender = gender;</span>
+<span class="nc" id="L68">    }</span>
+
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ElectricCarGroup.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Zoo04Group</a> &gt; <a href="index.source.html" class="el_package">edu.nwmissouri.zoo04group</a> &gt; <span class="el_source">ElectricCarGroup.java</span></div><h1>ElectricCarGroup.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package edu.nwmissouri.zoo04group;
+
+import java.util.ArrayList;
+
+/**
+ * Provides methods to create and run a group of ElectricCars
+ * @author Rehana Naguru
+ */
+<span class="nc" id="L13">public class ElectricCarGroup {</span>
+    private static ArrayList&lt;ElectricCar&gt; myGroup;
+
+    /**
+     * Create a static group of ElectricCar
+     * @return the number of vehicles in the group
+     */
+    public static int create() {
+<span class="fc" id="L21">        myGroup = new ArrayList&lt;&gt;();</span>
+        
+<span class="fc" id="L23">        ElectricCar a = new ElectricCar(&quot;blue&quot;);</span>
+<span class="fc" id="L24">        myGroup.add(a);</span>
+      //  myGroup.add(new ElectricCar(&quot;red&quot;));
+      //  myGroup.add(new ElectricCar(&quot;grey&quot;));
+
+<span class="fc" id="L28">        return myGroup.size();</span>
+    }
+
+    /** Illustrates enumerated types (simple Java enum)
+     * Good for attributes selected from a drop-down list
+     * Run (simulate) the group doing things 
+     * 
+     */ 
+<span class="fc" id="L36">    public enum Color {</span>
+<span class="fc" id="L37">       Red,</span>
+<span class="fc" id="L38">       Grey,</span>
+<span class="fc" id="L39">       Blue,</span>
+<span class="fc" id="L40">       Black;</span>
+    }
+    public static void run() {
+<span class="fc" id="L43">        System.out.println(&quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&quot;);</span>
+<span class="fc" id="L44">        System.out.println(&quot;Look at the Electric Car!&quot;);</span>
+<span class="fc" id="L45">        myGroup.forEach(ElectricCar -&gt; {</span>
+<span class="fc" id="L46">            ElectricCar.location();</span>
+<span class="fc" id="L47">            ElectricCar.type();</span>
+<span class="fc" id="L48">            ElectricCar.model();</span>
+<span class="fc" id="L49">            ElectricCar.make();</span>
+<span class="fc" id="L50">            ElectricCar.color();</span>
+<span class="fc" id="L51">            ElectricCar.price();</span>
+<span class="fc" id="L52">        });</span>
+<span class="fc" id="L53">        System.out.println(&quot;Nice Electric Car - that was a nice ride!&quot;);</span>
+<span class="fc" id="L54">        System.out.println(&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; \n&quot;); </span>
+        
+<span class="fc" id="L56">         Color col = Color.Grey; </span>
+<span class="pc bpc" id="L57" title="4 of 5 branches missed.">        switch(col) {</span>
+            case Red: 
+<span class="nc" id="L59">                System.out.println(&quot;***********Your vehicle color is Red***************&quot;);</span>
+<span class="nc" id="L60">                System.out.println(&quot;____________________________________________________&quot;);</span>
+<span class="nc" id="L61">                break;</span>
+            case Grey: 
+<span class="fc" id="L63">                System.out.println(&quot;____________________________________________________&quot;);</span>
+<span class="fc" id="L64">                System.out.println(&quot;***********Your vehicle color is Grey***************&quot;);</span>
+<span class="fc" id="L65">                System.out.println(&quot;____________________________________________________&quot;);</span>
+<span class="fc" id="L66">                break;</span>
+            case Blue: 
+<span class="nc" id="L68">                System.out.println(&quot;***********Your vehicle color is Blue****************&quot;);</span>
+<span class="nc" id="L69">                break;</span>
+            case Black: 
+<span class="nc" id="L71">                System.out.println(&quot;***********Your vehicle color is Black***************&quot;);</span>
+                break;    
+        }
+<span class="fc" id="L74">    }</span>
+
+    
+}
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

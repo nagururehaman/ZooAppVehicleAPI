@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Panda.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Zoo04Group</a> &gt; <a href="index.source.html" class="el_package">edu.nwmissouri.zoo04group</a> &gt; <span class="el_source">Panda.java</span></div><h1>Panda.java</h1><pre class="source lang-java linenums">package edu.nwmissouri.zoo04group;
+
+/**
+ * Panda animal class extends Animal Class
+ *
+ * @author Preethi Jadhav
+ */
+public class Panda extends Animal {
+
+    /**
+     * Panda constructor
+     *
+     * @param name - the name of this Panda
+     */
+    public Panda(String name) {
+<span class="fc" id="L16">        super(name);</span>
+<span class="fc" id="L17">    }</span>
+
+    /**
+     * speak overrides function in animal class
+     */
+    @Override
+    public void speak() {
+<span class="fc" id="L24">        System.out.println(&quot;Hi I am a &quot; + this.name + &quot;! I Squeak.. &quot;);</span>
+<span class="fc" id="L25">    }</span>
+
+    /**
+     * move overrides function in animal class
+     */
+    @Override
+    public void move() {
+<span class="fc" id="L32">        System.out.println(&quot;I am a lazy animal and love to roll on ground&quot;);</span>
+<span class="fc" id="L33">    }</span>
+
+    /**
+     * looks describe how the animal looks
+     */
+    public void looks() {
+<span class="fc" id="L39">        System.out.println(&quot;Hi I am a &quot; + this.name + &quot;! i am black and white with fur..&quot;);</span>
+<span class="fc" id="L40">    }</span>
+
+    /**
+     * eat describe what the animal eats
+     */
+    public void eat() {
+<span class="fc" id="L46">        System.out.println(&quot;I like eating bamboo!&quot;);</span>
+<span class="fc" id="L47">    }</span>
+
+    /**
+     * function pandaType
+     */
+    public void pandaType() {
+<span class="fc" id="L53">        String firstName = &quot;RED&quot;;</span>
+<span class="fc" id="L54">        String lastName = &quot;PANDA&quot;;</span>
+
+<span class="fc" id="L56">        System.out.println(&quot;There are 2 types of panda, RED panda ,BLACK-WHITE pandas....&quot;);</span>
+<span class="fc" id="L57">        String fullName = fullname(firstName, lastName);</span>
+<span class="fc" id="L58">        System.out.println(&quot;My full name is : &quot; + fullName);</span>
+
+<span class="fc" id="L60">    }</span>
+
+    /**
+     *
+     * @param fname
+     * @param lname
+     * @return
+     */
+    public String fullname(String fname, String lname) {
+<span class="fc" id="L69">        return fname + lname;</span>
+    }
+
+    /**
+     *
+     * @param args main class for panda
+     */
+    public static void main(String[] args) {
+<span class="fc" id="L77">        var panda = new Panda(&quot;Test&quot;);</span>
+<span class="fc" id="L78">        panda.speak();</span>
+<span class="fc" id="L79">        panda.move();</span>
+<span class="fc" id="L80">        panda.looks();</span>
+<span class="fc" id="L81">        panda.eat();</span>
+<span class="fc" id="L82">        panda.pandaType();</span>
+<span class="fc" id="L83">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

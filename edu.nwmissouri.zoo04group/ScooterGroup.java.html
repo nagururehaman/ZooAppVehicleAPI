@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ScooterGroup.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Zoo04Group</a> &gt; <a href="index.source.html" class="el_package">edu.nwmissouri.zoo04group</a> &gt; <span class="el_source">ScooterGroup.java</span></div><h1>ScooterGroup.java</h1><pre class="source lang-java linenums">package edu.nwmissouri.zoo04group;
+
+import java.util.ArrayList;
+
+/**
+ * Provides methods to create and run a group of Scooter
+ *
+ * @author NIKHIL KUMAR AKARAPU
+ */
+<span class="nc" id="L10">public class ScooterGroup {</span>
+
+    private static ArrayList&lt;Scooter&gt; myGroup;
+
+    /**
+     * Create a static group of Scooter
+     *
+     * @return the number of vehicles in the group
+     */
+    public static int create() {
+<span class="fc" id="L20">        myGroup = new ArrayList&lt;&gt;();</span>
+        
+<span class="fc" id="L22">        Scooter e = new Scooter(&quot;blu&quot;);</span>
+<span class="fc" id="L23">        myGroup.add(e);</span>
+      // myGroup.add(new ElectricCar(&quot;red&quot;));
+      //  myGroup.add(new ElectricCar(&quot;grey&quot;));
+
+<span class="fc" id="L27">        return myGroup.size();</span>
+    }
+
+    
+
+    
+
+    
+
+   
+    /**
+     * Illustrates enumerated types (simple Java enum) Good for attributes
+     * selected from a drop-down list Run (simulate) the group doing things
+     *
+     */
+<span class="fc" id="L42">    public enum Color {</span>
+<span class="fc" id="L43">        Red,</span>
+<span class="fc" id="L44">        Grey,</span>
+<span class="fc" id="L45">        Blue,</span>
+<span class="fc" id="L46">        Black;</span>
+    }
+
+    public static void run() {
+<span class="fc" id="L50">        System.out.println(&quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&quot;);</span>
+<span class="fc" id="L51">        System.out.println(&quot;Look at the Scooter!&quot;);</span>
+<span class="fc" id="L52">         myGroup.forEach(Scooter -&gt; {</span>
+<span class="fc" id="L53">             Scooter.location();</span>
+<span class="fc" id="L54">            Scooter.type();</span>
+<span class="fc" id="L55">            Scooter.mileage();</span>
+<span class="fc" id="L56">            Scooter.color();</span>
+<span class="fc" id="L57">            Scooter.price();</span>
+          
+<span class="fc" id="L59">        });</span>
+<span class="fc" id="L60">        System.out.println(&quot;Nice Scooter - that was a nice ride!&quot;);</span>
+<span class="fc" id="L61">        System.out.println(&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; \n&quot;);</span>
+
+<span class="fc" id="L63">        Color col = Color.Grey;</span>
+<span class="pc bpc" id="L64" title="4 of 5 branches missed.">        switch (col) {</span>
+            case Red:
+<span class="nc" id="L66">                System.out.println(&quot;***********Your vehicle color is Red***************&quot;);</span>
+<span class="nc" id="L67">                System.out.println(&quot;____________________________________________________&quot;);</span>
+<span class="nc" id="L68">                break;</span>
+            case Grey:
+<span class="fc" id="L70">                System.out.println(&quot;____________________________________________________&quot;);</span>
+<span class="fc" id="L71">                System.out.println(&quot;***********Your vehicle color is Grey***************&quot;);</span>
+<span class="fc" id="L72">                System.out.println(&quot;____________________________________________________&quot;);</span>
+<span class="fc" id="L73">                break;</span>
+            case Blue:
+<span class="nc" id="L75">                System.out.println(&quot;***********Your vehicle color is Blue****************&quot;);</span>
+<span class="nc" id="L76">                break;</span>
+            case Black:
+<span class="nc" id="L78">                System.out.println(&quot;***********Your vehicle color is Black***************&quot;);</span>
+                break;
+        }
+<span class="fc" id="L81">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

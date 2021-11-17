@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ZooAppVehicle.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Zoo04Group</a> &gt; <a href="index.source.html" class="el_package">edu.nwmissouri.zoo04group</a> &gt; <span class="el_source">ZooAppVehicle.java</span></div><h1>ZooAppVehicle.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package edu.nwmissouri.zoo04group;
+import java.util.Scanner;
+/**
+ * ZooAppVehicle is a Zoo simulation created by 05FA21 Group04
+ * @author Rehana Naguru
+ */
+<span class="nc" id="L11">public class ZooAppVehicle {</span>
+
+    // Specify welcome message
+    private static final String GREETING_MESSAGE = &quot;Welcome to our Zoo Vehicle !&quot;;
+
+    // Specify how to exit message
+    private static final String ESCAPE_MESSAGE = &quot;Hit Q to exit.&quot;;
+
+    // Specify goodbye string
+    private static final String GOODBYE_MESSAGE = &quot;Thank you for renting our Zoo Vehicle!&quot;;
+
+    // specify number of  VEHICLE types available 
+    private static final int NUMBER_VEHICLE_TYPES = 6;
+
+    /**
+     * This main() method is the entry point for our application.
+     *
+     * @param args - inputs provided to the program (none required)
+     */
+    public static void main(String[] args) {
+
+        // output welcome
+<span class="nc" id="L33">        System.out.println(GREETING_MESSAGE);</span>
+
+        // output how to escape 
+<span class="nc" id="L36">        System.out.println(ESCAPE_MESSAGE);</span>
+
+        // construct Scanner and begin interaction
+<span class="nc" id="L39">        var scanner = new Scanner(System.in);</span>
+
+        // Prompt for topic: ask if they want to rent vehicles
+<span class="nc" id="L42">        System.out.println(&quot;Do you want to rent vehicle (y/n)?&quot;);</span>
+<span class="nc" id="L43">        var vehicleInterestInput = scanner.next();</span>
+
+        // if yes, show list
+<span class="nc bnc" id="L46" title="All 2 branches missed.">        if (vehicleInterestInput.toUpperCase().startsWith(&quot;Y&quot;)) {</span>
+
+            // declare an int for the vehicle type number input
+            int typeNumberInput;
+
+            // declare a boolean for isValid
+            boolean isValid;
+
+            // do the list prompt for the first time, loop back while valid
+            do {
+                // Prompt for type: ask if they want to rent vehicle.
+<span class="nc" id="L57">                System.out.println();</span>
+<span class="nc" id="L58">                System.out.println(&quot;What vehicle would you like to see?&quot;);</span>
+<span class="nc" id="L59">                System.out.println(&quot;Enter a number to choose, 0 to exit.&quot;);</span>
+
+<span class="nc" id="L61">                System.out.print(&quot; 1.Bike            &quot;);</span>
+<span class="nc" id="L62">                System.out.print(&quot; 2.Bus          &quot;);</span>
+<span class="nc" id="L63">                System.out.print(&quot; 3.Coal Train         &quot;);</span>
+<span class="nc" id="L64">                System.out.print(&quot; 4.Electric Car    &quot;);</span>
+<span class="nc" id="L65">                System.out.print(&quot; 5.Scooter             &quot;);</span>
+<span class="nc" id="L66">                System.out.println(&quot; 6.Wheel Chair         &quot;);</span>
+                try {
+<span class="nc" id="L68">                    typeNumberInput = scanner.nextInt();</span>
+<span class="nc" id="L69">                } catch (Exception ex) {</span>
+<span class="nc" id="L70">                    typeNumberInput = 0;</span>
+<span class="nc" id="L71">                }</span>
+
+<span class="nc bnc" id="L73" title="All 4 branches missed.">                isValid = typeNumberInput &gt;= 1 &amp;&amp; typeNumberInput &lt;= NUMBER_VEHICLE_TYPES;</span>
+
+                // switch by VEHICLE type - autogenerate with ZooBuildSwitch.java
+<span class="nc bnc" id="L76" title="All 7 branches missed.">                switch (typeNumberInput) {</span>
+                    case 1 -&gt;  {
+<span class="nc" id="L78">                        BikeGroup.create();</span>
+<span class="nc" id="L79">                        BikeGroup.run(); </span>
+<span class="nc" id="L80">                    }</span>
+                    case 2 -&gt;  {
+<span class="nc" id="L82">                        BusGroup.create();</span>
+<span class="nc" id="L83">                        BusGroup.run();</span>
+<span class="nc" id="L84">                    }</span>
+                    case 3 -&gt;  {
+<span class="nc" id="L86">                        CoalTrainGroup.create();</span>
+<span class="nc" id="L87">                        CoalTrainGroup.run();</span>
+<span class="nc" id="L88">                    }</span>
+                    case 4 -&gt;  {
+<span class="nc" id="L90">                        ElectricCarGroup.create();</span>
+<span class="nc" id="L91">                        ElectricCarGroup.run();</span>
+<span class="nc" id="L92">                    }</span>
+                    case 5 -&gt;  {
+<span class="nc" id="L94">                        ScooterGroup.create();</span>
+<span class="nc" id="L95">                        ScooterGroup.run();</span>
+<span class="nc" id="L96">                    }</span>
+                    case 6 -&gt;  {
+<span class="nc" id="L98">                        WheelChairGroup.create();</span>
+<span class="nc" id="L99">                        WheelChairGroup.run();</span>
+<span class="nc" id="L100">                    }</span>
+                    default -&gt; {
+                    }
+
+                }
+
+                // while the input is valid, we loop back
+<span class="nc bnc" id="L107" title="All 2 branches missed.">            } while (isValid);</span>
+
+           
+        } 
+        
+        // Prompt for topic: ask if they want to rent vehicles
+<span class="nc" id="L113">        System.out.println(&quot;Do you want to see animal (y/n)?&quot;);</span>
+<span class="nc" id="L114">        var animalInterestInput = scanner.next();</span>
+
+        // if yes, show list
+<span class="nc bnc" id="L117" title="All 2 branches missed.">        if (animalInterestInput.toUpperCase().startsWith(&quot;Y&quot;)) {</span>
+
+            // declare an int for the animal type number input
+            int typeNumberInput;
+
+            // declare a boolean for isValid
+            boolean isValid;
+
+            // do the list prompt for the first time, loop back while valid
+            do {
+                // Prompt for type: ask if they want to see animals
+<span class="nc" id="L128">                System.out.println();</span>
+<span class="nc" id="L129">                System.out.println(&quot;Now you are ready to see animals.&quot;);</span>
+<span class="nc" id="L130">                System.out.println(&quot;What animal would you like to see?&quot;);</span>
+<span class="nc" id="L131">                System.out.println(&quot;Enter a number to choose, 0 to exit.&quot;);</span>
+
+<span class="nc" id="L133">                System.out.print(&quot; 1.Arvicolinae        &quot;);</span>
+<span class="nc" id="L134">                System.out.print(&quot; 2.Cat          &quot;);</span>
+<span class="nc" id="L135">                System.out.print(&quot; 3.HarpSeal        &quot;);</span>
+<span class="nc" id="L136">                System.out.print(&quot; 4.Panda         &quot;);</span>
+<span class="nc" id="L137">                System.out.print(&quot; 5.Squirrel        &quot;);</span>
+<span class="nc" id="L138">                System.out.println(&quot; 6.Walrus         &quot;);</span>
+                try {
+<span class="nc" id="L140">                    typeNumberInput = scanner.nextInt();</span>
+<span class="nc" id="L141">                } catch (Exception ex) {</span>
+<span class="nc" id="L142">                    typeNumberInput = 0;</span>
+<span class="nc" id="L143">                }</span>
+
+<span class="nc bnc" id="L145" title="All 4 branches missed.">                isValid = typeNumberInput &gt;= 1 &amp;&amp; typeNumberInput &lt;= NUMBER_VEHICLE_TYPES;</span>
+
+                // switch by animal type - autogenerate with ZooBuildSwitch.java
+<span class="nc bnc" id="L148" title="All 7 branches missed.">                switch (typeNumberInput) {</span>
+                    case 1 -&gt;  {
+<span class="nc" id="L150">                        ArvicolinaeGroup.create();</span>
+<span class="nc" id="L151">                        ArvicolinaeGroup.run();</span>
+<span class="nc" id="L152">                    }</span>
+                    case 2 -&gt;  {
+<span class="nc" id="L154">                        CatGroup.create();</span>
+<span class="nc" id="L155">                        CatGroup.run();</span>
+<span class="nc" id="L156">                    }</span>
+                    case 3 -&gt;  {
+<span class="nc" id="L158">                        HarpSealGroup.create();</span>
+<span class="nc" id="L159">                        HarpSealGroup.run();</span>
+<span class="nc" id="L160">                    }</span>
+                    case 4 -&gt;  {
+<span class="nc" id="L162">                        PandaGroup.create();</span>
+<span class="nc" id="L163">                        PandaGroup.run();</span>
+<span class="nc" id="L164">                    }</span>
+                    case 5 -&gt;  {
+<span class="nc" id="L166">                        SquirrelGroup.create();</span>
+<span class="nc" id="L167">                        SquirrelGroup.run();</span>
+<span class="nc" id="L168">                    }</span>
+                    case 6 -&gt;  {
+<span class="nc" id="L170">                        WalrusGroup.create();</span>
+<span class="nc" id="L171">                        WalrusGroup.run();</span>
+<span class="nc" id="L172">                    }</span>
+                    default -&gt; {
+                    }
+
+                }
+
+                // while the input is valid, we loop back
+<span class="nc bnc" id="L179" title="All 2 branches missed.">            } while (isValid);</span>
+
+           
+        } 
+        // Prompt for adventures: ask if they want to try an adventure
+         //    System.out.println(&quot;Do you want to go on an adven (y/n)?&quot;);
+        //        var adventureInterestInput = scanner.next();
+        //        if (adventureInterestInput.toUpperCase().startsWith(&quot;Y&quot;)) {
+        //            System.out.println(&quot;Sorry - this option is not yet available.&quot;);
+        //        }
+        // output goodbye
+<span class="nc" id="L190">        System.out.println(GOODBYE_MESSAGE);</span>
+
+<span class="nc" id="L192">    }</span>
+
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
